@@ -44,7 +44,7 @@ jobs:
         run: gradle build
 
       - name: gradlew build
-        run: ls -la
+        run: chmod -R 777 ./gradlew && ./gradlew build
 
       - name: docker version
         run: |

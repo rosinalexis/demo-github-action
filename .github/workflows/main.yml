@@ -62,3 +62,9 @@ jobs:
 
       - name: push docker image to dockerhub
         run: docker push rosinalexis/demo-kotlin:1.0
+
+      - name: RUN AZ Command
+        run: |
+          az account show
+          az group list
+          

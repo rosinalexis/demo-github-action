@@ -44,7 +44,7 @@ jobs:
         run: gradle build
 
       - name: gradlew build
-        run: ./gradlew build
+        run: ls -la
 
       - name: docker version
         run: |

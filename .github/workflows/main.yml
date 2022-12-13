@@ -53,8 +53,9 @@ jobs:
 
       - name: docker build
         run: |
-          docker build . -t demo-kotlin:1.0
-          docker images -a
+          docker build . -t demo-kotlin
+          docker image tag demo-kotlin rosinalexis/demo-kotlin:1.0
+          
 
       - name: docker login -u -p
         run: docker login -u ${{ secrets.dockerhubusername }} -p ${{ secrets.dockerhubpassword }}

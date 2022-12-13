@@ -44,7 +44,7 @@ jobs:
         run: gradle build
 
       - name: gradlew build
-        run: chmod -R 777 ./gradlew && ./gradlew build
+        run: chmod +x gradlew && gradlew build
 
       - name: docker version
         run: |
@@ -53,11 +53,11 @@ jobs:
 
       - name: docker build
         run: |
-          docker build . -t demo-kotlin2.0
+          docker build . -t demo-kotlin:1.0
           docker images -a
 
       - name: docker login -u -p
         run: docker login -u ${{ secrets.dockerhubusername }} -p ${{ secrets.dockerhubpassword }}
 
       - name: push docker image to dockerhub
-        run: docker push rosinalexis/demo-kotline:tagname
+        run: docker push rosinalexis/demo-kotlin:1.0
